@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Creative Code Lesson 1</title>
+	</head>
+
+	<body>
+		<!--Hello Domestika -->
+		<h1><a href="https://www.w3schools.com/jsref/api_canvas.asp" target="_blank">w3schools full Canvas reference</a></h1>
+		<canvas width="600" height="600"></canvas>
+
+		<script>
+			let canvas = document.querySelector('canvas');
+			let context = canvas.getContext('2d');
+			context.fillStyle = 'blue'
+			context.fillRect(0,0,600,600)
+
+			// yellow square
+			context.fillStyle = 'yellow';
+
+			/* x 100, y100, w 100, h 100 */	
+			context.fillRect(98,98,400,400)
+
+			context.linewidth = 4;
+			context.beginPath();
+			context.rect(100,100,400,400);
+			context.stroke();
+
+			// circle
+			context.beginPath();
+			context.fillStyle = 'red';
+			// arc takes 6 parameters
+			/*
+			x co-ord, y , r radius of circle, 
+			sAngle in radians (0 is at 3 o'clock), 
+			eAngle ( radians)
+			counterclockwise - optional
+			*/
+			context.arc(300,300,100,0,Math.PI*2);
+			context.stroke();
+
+			let year = 2042;
+			let next_year = year + 1;
+
+			let dinner = 'salad';
+			let sentence = 'Tonight, dinner will be ' + dinner;
+
+			function saySomething(param) {
+				console.log(param);
+
+			}
+
+			saySomething(sentence)
+
+			function add(a,b) {
+				return a + b;
+			}
+
+			let result = add(5,7);
+			console.log(result);
+
+			let multiply = (a,b) => {
+				return a * b;
+			}
+
+			console.log(multiply(5,7));
+
+		</script>
+
+	</body>
+
+</html>
