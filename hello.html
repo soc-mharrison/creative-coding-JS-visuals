@@ -11,13 +11,18 @@
 		<script>
 			let canvas = document.querySelector('canvas');
 			let context = canvas.getContext('2d');
+
+			//comment out blue / yellow boxes and circle
+			/*
+
+			// blue box
 			context.fillStyle = 'blue'
 			context.fillRect(0,0,600,600)
 
 			// yellow square
 			context.fillStyle = 'yellow';
 
-			/* x 100, y100, w 100, h 100 */	
+			// x 100, y100, w 100, h 100 
 			context.fillRect(98,98,400,400)
 
 			context.linewidth = 4;
@@ -25,7 +30,7 @@
 			context.rect(100,100,400,400);
 			context.stroke();
 
-			// circle
+			// circle clear with black stroke
 			context.beginPath();
 			context.fillStyle = 'red';
 			// arc takes 6 parameters
@@ -63,6 +68,43 @@
 			}
 
 			console.log(multiply(5,7));
+
+/*
+ARRAYS & LOOPS video 1.3
+*/
+			let years = [2023, 2024, 2025];
+			let menu = ['starter', 'main' , 'dessert', 'drinks', 'sides'];
+
+// 3 parts, i index ; 
+			//	for ( i = 0; i < 4; i++ ) {
+
+			for ( let i = 0; i < menu.length; i++ ) {
+				console.log(menu[i]);
+			}
+
+			for ( let i = 0; i < 10; i++ ) {
+				years.push(2026 + i)
+			}
+
+			console.log(years);
+
+// for loop with values stored in variables with a nested loop
+			for (let i = 0; i < 5; i++){
+
+
+				context.beginPath();
+				context.rect(100 + 80 * i, 100, 40, 60);
+				context.stroke();
+
+
+// for loop with literal values
+			/*
+			for (let i = 0; i < 5; i++){
+				context.beginPath();
+				context.rect(100 + 80 * i, 100, 40, 60);
+				context.stroke();
+			}
+			*/
 
 		</script>
 
