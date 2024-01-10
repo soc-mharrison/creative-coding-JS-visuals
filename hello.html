@@ -89,18 +89,22 @@ ARRAYS & LOOPS video 1.3
 			console.log(years);
 
 // for loop with values stored in variables with a nested loop
-			for (let i = 0; i < 5; i++){
-				let width = 60;
-				let height = 60;
-				let gap = 20;
-				// automatically place along x axis
-				let x = 100 + (width + gap) * i;
-				let y = 100;
+			for (let i = 0; i < 5; i++) {
+				// start nested loop for columns
+				for (let j = 0; j < 5; j++) {
+					let width = 60;
+					let height = 60;
+					let gap = 20;
+					// automatically place along x axis
+					let x = 100 + (width + gap) * i;
+					// update y to automatically make grid
+					let y = 100 + (height + gap) * j;
 
-				context.beginPath();
-				context.rect(x , y, width, height);
-				context.stroke();
-
+					context.beginPath();
+					context.rect(x , y, width, height);
+					context.stroke();
+				} //end nested loop				
+			}
 
 // for loop with literal values
 			/*
@@ -109,7 +113,7 @@ ARRAYS & LOOPS video 1.3
 				context.rect(100 + 80 * i, 100, 40, 60);
 				context.stroke();
 			*/
-			}
+			
 			
 
 		</script>
