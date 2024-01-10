@@ -105,8 +105,8 @@ ARRAYS & LOOPS video 1.3
 					context.rect(x , y, width, height);
 					context.stroke();
 
-					// Use IF to only show grid of smaller boxes in columns 2-4 (not index 0 and 4)
-					if (i > 0 && i < 4){
+					// Use IF to only show grid of smaller boxes in columns based on a coin toss of 50% (Math.random() picks a no. from 0-1)
+					if (Math.random() > 0.5){
 						context.beginPath();
 						context.rect(x + 8, y + 8, width -16, height - 16);
 						context.stroke();
