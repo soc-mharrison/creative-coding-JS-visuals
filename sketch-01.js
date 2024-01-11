@@ -6,7 +6,7 @@ const settings = {
 
 const sketch = () => {
   return ({ context, width, height }) => {
-    context.fillStyle = 'white';
+    context.fillStyle = 'black';
     context.fillRect(0, 0, width, height);
     context.lineWidth = width * 0.01; // responsive line width
 
@@ -32,6 +32,7 @@ const sketch = () => {
 
           context.beginPath();
           context.rect(x , y, w, h);
+          context.strokeStyle = 'white';
           context.stroke();
 
           // Use IF to only show grid of smaller boxes in columns based on a coin toss of 50% (Math.random() picks a no. from 0-1)
@@ -39,6 +40,8 @@ const sketch = () => {
             context.beginPath();
             // responsive offset
             context.rect(x + off / 2, y + off / 2, w -off, h - off); 
+            context.strokeStyle = 'white';
+
             context.stroke(); 
           }
         } //end nested loop   
