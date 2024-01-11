@@ -1,30 +1,34 @@
 const canvasSketch = require('canvas-sketch');
 
 const settings = {
-  dimensions: 'A4',
-  pixelsPerInch: 300,
-  orientation: 'landscape'
+  dimensions: [1080, 1080]
 };
 
 const sketch = () => {
   return ({ context, width, height }) => {
     context.fillStyle = 'white';
     context.fillRect(0, 0, width, height);
+    context.lineWidth = width * 0.01; // responsive line width
 
-// setup variables - use const for values that won't change
-      const w = 60;
-      const h = 60;
-      const gap = 20;
+// responsive variables - use const for values that won't change
+      const w   = width  * 0.10;
+      const h   = height * 0.10;
+      const gap = width  * 0.03;
+      const ix  = width  * 0.17;  // initial x
+      const iy  = width  * 0.17;  // initial y
+
+      const off  = width  * 0.17;  // responsive offset
+
       let x, y;     // use let for x, y because position will change
 
 // for loop with values stored in variables with a nested loop
       for (let i = 0; i < 5; i++) {
         // start nested loop for columns
         for (let j = 0; j < 5; j++) {
-          // update x y to place along x axis
-          x = 100 + (w + gap) * i;
+          // update x y to initial x & y (ix and iy) to place responsively
+          x = ix + (w + gap) * i;
           // update y to automatically make grid
-          y = 100 + (h + gap) * j;
+          y = iy + (h + gap) * j;
 
           context.beginPath();
           context.rect(x , y, w, h);
@@ -33,8 +37,9 @@ const sketch = () => {
           // Use IF to only show grid of smaller boxes in columns based on a coin toss of 50% (Math.random() picks a no. from 0-1)
           if (Math.random() > 0.5){
             context.beginPath();
-            context.rect(x + 8, y + 8, w -16, h - 16);
-            context.stroke();
+            // responsive offset
+            context.rect(x + off / 2, y + off / 2, w -off, h - off); 
+            context.stroke(); 
           }
         } //end nested loop   
       }
