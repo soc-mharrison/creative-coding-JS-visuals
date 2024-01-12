@@ -18,14 +18,16 @@ const sketch = () => {
    //  const y = 0;
    // use relative x y pos to transform placement
 
-    const x = width  * 0.5;  // square's top corner is 50% across screen
-    const y = height * 0.5;  // relative 50% vertically
+    const x = width  * 0.5;      // square's top corner is 50% across screen
+    const y = height * 0.5;      // relative 50% vertically
     const w = width  * 0.3;
     const h = height * 0.3;    
 
+    context.translate(x,y);      // apply translate() method using x,y
+
     context.beginPath();
     context.fillStyle = 'black';
-    context.rect(x , y, w, h);
+    context.rect(0 , 0, w, h);   // reset x,y to origin 0,0
     context.fill();
 
   };
