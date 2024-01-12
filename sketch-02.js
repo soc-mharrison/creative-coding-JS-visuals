@@ -15,15 +15,18 @@ const sketch = () => {
     context.fillRect(0, 0, width, height);
 
     // use relative sizes so it can easily resize
-    const x = width  * 0.5;
-    const y = height * 0.5;
+    const x = 0;
+    const y = 0;
+  //  const x = width  * 0.5;  // relative
+  //  const y = height * 0.5;  // relative
     const w = width  * 0.3;
     const h = height * 0.3;    
 
     context.beginPath();
+    context.fillStyle = 'black';
     context.rect(x , y, w, h);
     context.fill();
-    
+
   };
 };
 
