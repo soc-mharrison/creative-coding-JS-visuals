@@ -14,11 +14,12 @@ const sketch = () => {
     context.fillStyle = 'white';
     context.fillRect(0, 0, width, height);
 
-    // use relative sizes so it can easily resize
-    const x = 0;
-    const y = 0;
-  //  const x = width  * 0.5;  // relative
-  //  const y = height * 0.5;  // relative
+    // const x = 0; // fixed position at origin (top left)
+   //  const y = 0;
+   // use relative x y pos to transform placement
+
+    const x = width  * 0.5;  // square's top corner is 50% across screen
+    const y = height * 0.5;  // relative 50% vertically
     const w = width  * 0.3;
     const h = height * 0.3;    
 
