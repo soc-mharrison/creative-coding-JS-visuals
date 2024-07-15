@@ -1,3 +1,9 @@
+/* sketch-01.js
+Creative Coding
+Unit 2: Foundation
+Matt Harrison, 12/01/24
+*/
+
 const canvasSketch = require('canvas-sketch');
 
 const settings = {
